@@ -1,7 +1,7 @@
 '''
 Nome : Vinicius R.P.
-Data : 070/6/2024
-Algoritimo : Senha
+Data : 07/06/2024
+
 Descrisão : 
 '''
 #variavel

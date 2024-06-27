@@ -1,0 +1,38 @@
+'''
+Nome : Vinicius R.P.
+Data : 14/06/2024
+Algoritimo : ARRAY
+Descrisão :Estudo do tipo de dado Array (Vetor)
+'''
+#============================================================================================
+
+# alunos_sala =['Vini', 'Isa', 'Bily']
+
+# alunos_sala.append('Caio')
+# print(alunos_sala)
+
+# print(alunos_sala(2)) # indice -> bily
+
+# for indice in range(4):
+#     print(alunos_sala)
+
+# for aluno in alunos_sala:
+#     print(aluno)
+
+          #     0         1         2
+cabecalho = ['Nome ', 'Idade', 'Matricula']
+        #     0         1      2 
+dado_um = ['pele', 'eterno', '10']
+        #   0           1
+
+tabela = [cabecalho, dado_um]
+print(tabela[1][0]) # -> pele
+
+# [        0        1          2
+#     0['Nome ', 'Idade', 'Matricula']
+#     1['pele', 'eterno', '   10    ']
+# ]
+
+#cordenadas   [1][C] l = linha , C = coluna 
+print(tabela[0][1]) # -> idade
+print(tabela[1][2]) # -> 10

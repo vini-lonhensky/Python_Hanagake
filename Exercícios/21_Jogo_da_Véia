@@ -1,0 +1,38 @@
+'''
+Nome : Vinicius R.P.
+Data : 14/06/2024
+descrição : fça um jogo da velha
+'''
+tabela_veia = [
+                    ['7','8','9'],
+                    ['4','5','6'],
+                    ['1','2','3']
+    ]
+
+rodadas = 0
+jogador = 'X'
+while rodadas < 9:
+   
+
+    linhaCompletar = '---------------' 
+
+    posicao = input(f'jogador {jogador} escolha uma posição:')
+    posicao_encontrada = False
+    for linha in range(3):
+        linhaCompleta = ''
+        for coluna in range(3):
+            if posicao == tabela_veia [linha] [coluna]:
+                tabela_veia [linha] [coluna] = jogador
+                posicao_encontrada = True
+            linhaCompleta += '|' + tabela_veia [linha][coluna] +'|'
+        print(f'{linhaCompleta}')
+        print(linhaCompletar)
+        
+    if posicao_encontrada == True :
+        rodadas = rodadas + 1
+        if jogador == 'X':
+            jogador = 'O'
+        else:
+            jogador = 'X'
+    else:
+        print('Posição não encontrada')
