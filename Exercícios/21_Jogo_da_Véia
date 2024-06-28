@@ -3,6 +3,8 @@ Nome : Vinicius R.P.
 Data : 14/06/2024
 descrição : fça um jogo da velha
 '''
+
+
 tabela_veia = [
                     ['7','8','9'],
                     ['4','5','6'],
@@ -11,13 +13,18 @@ tabela_veia = [
 
 rodadas = 0
 jogador = 'X'
-while rodadas < 9:
-   
+# função mostra o vencedor
+def mostrar_vencedor(vencedor):# Vencedor do escopo local da funçao
+    print('Temos um vencedor')
+
+while rodadas < 9:  
 
     linhaCompletar = '---------------' 
 
     posicao = input(f'jogador {jogador} escolha uma posição:')
+
     posicao_encontrada = False
+
     for linha in range(3):
         linhaCompleta = ''
         for coluna in range(3):
@@ -27,12 +34,41 @@ while rodadas < 9:
             linhaCompleta += '|' + tabela_veia [linha][coluna] +'|'
         print(f'{linhaCompleta}')
         print(linhaCompletar)
-        
+
     if posicao_encontrada == True :
         rodadas = rodadas + 1
         if jogador == 'X':
             jogador = 'O'
         else:
             jogador = 'X'
+
     else:
         print('Posição não encontrada')
+
+    if(tabela_veia [0] [0] == tabela_veia [0] [1] == tabela_veia[0] [2]): #l lina 0 
+            mostrar_vencedor(tabela_veia[0] [0])
+            break
+    elif(tabela_veia [1] [0] == tabela_veia [1] [1] == tabela_veia[1] [2]): # linha 1
+             mostrar_vencedor(tabela_veia[1] [0])
+             break 
+    elif(tabela_veia [2] [0] == tabela_veia [2] [1] == tabela_veia[2] [2]): # linha 2
+             mostrar_vencedor(tabela_veia[0] [0])
+             break
+    elif(tabela_veia [0] [0] == tabela_veia [1] [0] == tabela_veia[2] [0]): # coluna 1
+             mostrar_vencedor(tabela_veia[2] [0])
+             break
+    elif(tabela_veia [0] [0] == tabela_veia [1] [1] == tabela_veia[1] [2]): # coluna 2
+             mostrar_vencedor(tabela_veia[0] [0])
+             break
+    elif(tabela_veia [0] [0] == tabela_veia [1] [2] == tabela_veia[2] [2]): # coluna 3
+             mostrar_vencedor(tabela_veia[0] [0])
+             break
+    elif(tabela_veia [0] [0] == tabela_veia [1] [1] == tabela_veia[2] [2]): # Diagonal 1
+             mostrar_vencedor(tabela_veia[0] [0])
+             break
+    elif(tabela_veia [0] [2] == tabela_veia [1] [1] == tabela_veia[1] [0]): # Diagonal 2
+             mostrar_vencedor(tabela_veia[0] [2])
+             break
+      
+else:
+    print('Velha')
